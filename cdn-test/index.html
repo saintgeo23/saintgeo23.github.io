@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="font-website.css" />
+    <link rel="stylesheet" href="font-alias.css" />
+    <link rel="stylesheet" href="font-cdn.css" />
+    <link rel="stylesheet" href="https://ifunny.co/styles/extends.css" />
+    <link rel="stylesheet" href="https://static.ifunny.co/styles/extends.css" />
+    <link rel="stylesheet" href="https://d47a17q5xaohb.cloudfront.net/styles/extends.css" />
+    <style>
+      body {
+        font-family: 'ProximaNova', monospace;
+      }
+
+      img {
+        display: block;
+        width: 200px;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Image from website</h3>
+    <img src="https://ifunny.co/images/404@2x.jpg" alt="картинка с сайта" />
+    <h2>Image from alias</h3>
+    <img src="https://static.ifunny.co/images/404@2x.jpg" alt="картинка с алиаса" />
+    <h2>Image from cdn</h3>
+    <img src="https://d47a17q5xaohb.cloudfront.net/images/404@2x.jpg" alt="картинка с CDN" />
+
+    <script src="https://ifunny.co/vendors/vue.min.js"></script>
+    <script src="https://static.ifunny.co/vendors/vue.min.js"></script>
+    <script src="https://d47a17q5xaohb.cloudfront.net/vendors/vue.min.js"></script>
+    <script src="https://ifunny.co/scripts/app.js"></script>
+    <script src="https://static.ifunny.co/scripts/app.js"></script>
+    <script src="https://d47a17q5xaohb.cloudfront.net/scripts/app.js"></script>
+  </body>
+</html>
