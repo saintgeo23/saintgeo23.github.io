@@ -43,14 +43,80 @@
  * - type ('Profit')
  * */
 
+export type Category = {
+  id: string;
+  name: string;
+  photo?: string;
+}
+
+export type Product = {
+  id: string;
+  name: string;
+  photo: string;
+  desc?: string;
+  createdAt: string;
+  oldPrice?: number;
+  price: number;
+  category: Category;
+}
+
+export type Operation = Cost | Profit;
+
+export type OperationBase = {
+  id: string;
+  name: string;
+  desc?: string;
+  createdAt: string;
+  amount: number;
+  category: Category;
+}
+export type Cost = OperationBase & { type: 'Cost' }
+export type Profit = OperationBase & { type: 'Profit' }
+
+const categoryFirst: Category = {
+  id: 'one',
+  name: 'First',
+};
+
+const categorySecond: Category = {
+  id: 'two',
+  name: 'Second',
+};
+
 /**
  * Создает случайный продукт (Product).
  * Принимает дату создания (строка)
  * */
-// export const createRandomProduct = (createdAt: string) => {};
+export const createRandomProduct = (createdAt: string): Product => {
+  const randomNumber = Math.random();
+  const price = Math.floor(randomNumber * 100) + 1;
+  const id = `${randomNumber}`;
+
+  return {
+    id,
+    createdAt,
+    price,
+    name: `new_product_${id}`,
+    photo: `https://source.unsplash.com/random/200x200?sig=${id}`,
+    category: price > 50 ? categoryFirst : categorySecond,
+  }
+};
 
 /**
  * Создает случайную операцию (Operation).
  * Принимает дату создания (строка)
  * */
-// export const createRandomOperation = (createdAt: string) => {};
+export const createRandomOperation = (createdAt: string): Operation => {
+  const randomNumber = Math.random();
+  const amount = Math.floor(randomNumber * 100) + 1;
+  const id = `${randomNumber}`;
+
+  return {
+    id,
+    createdAt,
+    amount,
+    name: `new_operation_${id}`,
+    category: amount > 50 ? categoryFirst : categorySecond,
+    type: amount > 50 ? 'Cost' : 'Profit',
+  }
+};
