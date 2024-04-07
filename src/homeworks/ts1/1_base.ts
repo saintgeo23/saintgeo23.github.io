@@ -18,7 +18,8 @@ export const round = (value: number, accuracy = 2): number => {
 const transformRegexp: RegExp =
   /(matrix\(-?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, -?\d+(\.\d+)?, )(-?\d+(\.\d+)?), (-?\d+(\.\d+)?)\)/;
 
-export const getTransformFromCss = (transformCssString: string): { x: number, y: number } => {
+type Coords = { x: number, y: number }
+export const getTransformFromCss = (transformCssString: string): Coords => {
   const data = transformCssString.match(transformRegexp);
   if (!data) return { x: 0, y: 0 };
   return {
@@ -54,12 +55,12 @@ export const hex2rgb = (color: string): number[] => {
   return [red, green, blue];
 };
 
-type ValueObject = {
-  value: any;
+type ValueObject<T> = {
+  value: T;
   number: number;
 }
-export const getNumberedArray = (arr: any[]): ValueObject[] => arr.map((value: any, number: number): ValueObject => ({ value, number }));
-export const toStringArray = (arr: ValueObject[]): string[] => arr.map(({ value, number }: ValueObject): string => `${value}_${number}`);
+export const getNumberedArray = <T>(arr: T[]): ValueObject<T>[] => arr.map((value: T, number: number): ValueObject<T> => ({ value, number }));
+export const toStringArray = <T>(arr: ValueObject<T>[]): string[] => arr.map(({ value, number }: ValueObject<T>): string => `${value}_${number}`);
 
 interface ICustomerData {
   name: string;
