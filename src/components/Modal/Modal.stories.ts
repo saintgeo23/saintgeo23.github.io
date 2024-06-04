@@ -15,5 +15,3 @@ export default meta;
 export const ModalConfig = {
   args: {},
 }
-
-
