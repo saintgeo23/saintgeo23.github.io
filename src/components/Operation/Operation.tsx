@@ -1,5 +1,5 @@
 import React from 'react';
-import './operation.sass';
+import './operation.less';
 import CartButton from '../CartButton/CartButton';
 
 type TOperation = {

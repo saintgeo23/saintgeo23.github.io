@@ -1,5 +1,5 @@
 import React from 'react';
-import './cart-button.sass';
+import './cart-button.less';
 
 type TCartButton = {
   count: number;

@@ -66,7 +66,7 @@ module.exports = (_, args) => {
           type: 'asset/inline',
         },
         {
-          test: /\.s[ac]ss$/i,
+          test: /\.sass$/,
           use: [
             {
               loader: MiniCssExtractPlugin.loader,

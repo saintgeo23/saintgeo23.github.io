@@ -1,5 +1,5 @@
 import React from 'react';
-import './product-card.sass';
+import './product-card.less';
 import CartButton from '../CartButton/CartButton';
 
 type TProductCard = {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './cart-product.sass';
+import './cart-product.less';
 
 type TCartProduct = {
   title: string;

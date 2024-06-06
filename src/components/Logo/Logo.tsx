@@ -1,6 +1,9 @@
 import React from 'react';
-import './logo.sass';
+import { useTranslation } from 'react-i18next';
+import './logo.less';
 
 export default function Logo() {
-  return <div className="logo">Dream React learning team</div>;
+  const { t } = useTranslation();
+
+  return <div className="logo">{t('logoText')}</div>;
 }

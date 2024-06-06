@@ -1,12 +1,16 @@
 import React, { useRef, useEffect } from 'react';
 import ReactDom from 'react-dom';
-import './modal.sass';
+import './modal.less';
 
 interface ModalProps {
   /**
    * Defines if the modal is visible
    */
   visible?: boolean;
+  /**
+   * Function for parent component to see if the modal closes
+   */
+  onClose?: Function;
   /**
    * Modal content
    */
@@ -16,7 +20,7 @@ interface ModalProps {
 /**
  * Modal window for some text notification
  */
-export function Modal({ visible, children }: ModalProps) {
+export default function Modal({ visible, onClose, children }: ModalProps) {
   const modal = useRef(null);
 
   function showModal() {
@@ -25,6 +29,8 @@ export function Modal({ visible, children }: ModalProps) {
 
   function closeModal() {
     modal.current.close();
+
+    if (onClose) onClose();
   }
 
   useEffect(() => {

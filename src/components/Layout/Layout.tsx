@@ -1,5 +1,5 @@
 import React from 'react';
-import './layout.sass';
+import './layout.less';
 import Header from '../Header/Header';
 
 export default function Layout() {
