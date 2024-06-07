@@ -1,15 +1,9 @@
 import React from 'react';
 import './product-card.less';
 import CartButton from '../CartButton/CartButton';
+import type { Product } from '../ProductList/ProductList'
 
-type TProductCard = {
-  title: string;
-  url: string;
-  description: string;
-  cost: string;
-};
-
-function ProductCard({ title, url, description, cost }: TProductCard) {
+function ProductCard({ id, title, url, description, cost }: Product) {
   return (
     <div className="product-card">
       <img className="product-card__image" src={url} alt={title} />
