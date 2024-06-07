@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './language-switcher.less';
 import { useLanguage } from '../../providers/LanguageProvider';
 import type { Language } from '../../providers/LanguageProvider';
