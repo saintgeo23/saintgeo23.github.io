@@ -10,7 +10,7 @@ interface ModalProps {
   /**
    * Function for parent component to see if the modal closes
    */
-  onClose?: Function;
+  onClose?: () => void;
   /**
    * Modal content
    */
